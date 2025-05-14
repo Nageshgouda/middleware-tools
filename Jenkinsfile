@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git 'https://github.com/yourusername/middleware-tools.git'
+                git url: 'https://github.com/Nageshgouda/middleware-tools.git',
+                    credentialsId: 'github-creds'
             }
         }
 
@@ -17,12 +18,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
             }
         }
     }
