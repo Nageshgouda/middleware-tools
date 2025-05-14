@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git url: 'https://github.com/Nageshgouda/middleware-tools.git',
-                    credentialsId: 'github-creds'
+		git branch: 'main',
+	    	    credentialsId: 'github-creds',
+    		    url: 'https://github.com/Nageshgouda/middleware-tools.git'
+
             }
         }
 
